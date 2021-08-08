@@ -4,7 +4,7 @@
 
 {{quote {author: "Charles Babbage", title: "Passages from the Life of a Philosopher (1864)", chapter: true}
 
-En dos ocasiones me han preguntado, 'Dinos, Sr. Babbage, si pones
+En dos ocasiones me han preguntado, 'Dinos, Sr. Babbage, ¿si pones
 montos equivocadas en la máquina, saldrán las respuestas correctas?
 [...] No soy capaz de comprender correctamente el tipo de confusión de
 ideas que podrían provocar tal pregunta.
@@ -24,10 +24,10 @@ otros objetos— para construir estructuras más complejas.
 
 Los programas que hemos construido hasta ahora han estado limitados por el
 hecho de que estaban operando solo en tipos de datos simples. Este capítulo
-introducira estructuras de datos básicas. Al final de el, sabrás lo suficiente
+introducirá estructuras de datos básicas. Al final de él, sabrás lo suficiente
 como para comenzar a escribir programas útiles.
 
-El capítulo trabajara a través de un ejemplo de programación más o menos
+El capítulo trabajará a través de un ejemplo de programación más o menos
 realista, presentando nuevos conceptos según se apliquen al problema en
 cuestión. El código de ejemplo a menudo se basara en funciones y vinculaciones
 que fueron introducidas anteriormente en el texto.
@@ -48,7 +48,7 @@ if}}
 {{index "weresquirrel example", lycanthropy}}
 
 De vez en cuando, generalmente entre las ocho y las diez de la noche,
-((Jacques)) se encuentra a si mismo
+((Jacques)) se encuentra a sí mismo
 transformándose en un pequeño roedor peludo con una cola espesa.
 
 Por un lado, Jacques está muy contento de no tener la licantropía clásica.
@@ -63,7 +63,7 @@ pone algunas nueces en el piso para mantenerse ocupado.
 Eso se ocupa de los problemas del gato y el árbol. Pero Jacques preferiría
 deshacerse de su condición por completo. Las ocurrencias irregulares de la
 transformación lo hacen sospechar que estas podrían ser provocadas por
-algo en especifico. Por un tiempo, creyó que solo sucedia en los días
+algo en específico. Por un tiempo, creyó que solo sucedía en los días
 en los que el había estado cerca de árboles de roble. Pero evitar los robles
 no detuvo el problema.
 
@@ -244,12 +244,12 @@ console.log(secuencia);
 
 El método `push` agrega valores al final de un array, y el
 el método `pop` hace lo contrario, eliminando el último valor en el array
-y retornandolo.
+y retornándolo.
 
 Estos nombres algo tontos son los términos tradicionales para las operaciones en
 una _((pila))_. Una pila, en programación, es una ((estructura de datos)) que
 te permite agregar valores a ella y volverlos a sacar en el
-orden opuesto, de modo que lo que se agregó de último se elimine primero.
+orden opuesto, de modo que lo último que se agregó se elimine primero.
 Estas son comunes en la programación—es posible que recuerdes la ((pila))
 de llamadas en [el capítulo anterior](funciones#pila), que es una
 instancia de la misma idea.
@@ -313,7 +313,7 @@ Leer una propiedad que no existe te dará el valor `undefined`.
 {{index [property, assignment], mutability, "= operator"}}
 
 Es posible asignarle un valor a una expresión de propiedad con un
-operador `=`. Esto reemplazará el valor de la propiedad si ya tenia uno
+operador `=`. Esto reemplazará el valor de la propiedad si ya tenía uno
 o crea una nueva propiedad en el objeto si no fuera así.
 
 {{index "tentacle (analogy)", [property, "model of"]}}
@@ -378,7 +378,7 @@ console.log(objetoA);
 
 Los arrays son, entonces, solo un tipo de objeto especializado para almacenar
 secuencias de cosas. Si evalúas `typeof []`, este produce
-`"object"`. Podrias imaginarlos como pulpos largos y planos con todos sus
+`"object"`. Podrías imaginarlos como pulpos largos y planos con todos sus
 tentáculos en una fila ordenada, etiquetados con números.
 
 {{index journal, "weresquirrel example"}}
@@ -424,8 +424,8 @@ diferentes momentos.
 
 Cuando tenemos dos números, 120 y 120, podemos considerarlos el mismo número
 precisamente, ya sea que hagan referencia o no a los mismos bits físicos.
-Con los objetos, hay una diferencia entre tener dos referencias a
-el mismo objeto y tener dos objetos diferentes que contengan las mismas
+Con los objetos, hay una diferencia entre tener dos referencias al 
+mismo objeto y tener dos objetos diferentes que contengan las mismas
 propiedades. Considera el siguiente código:
 
 ```
@@ -448,7 +448,7 @@ console.log(objeto3.valor);
 {{index "tentacle (analogy)", [binding, "model of"]}}
 
 Las vinculaciones `objeto1` y `objeto2` agarran el _mismo_ objeto, que es
-la razon por la cual cambiar `objeto1` también cambia el valor de `objeto2`.
+la razón por la cual cambiar `objeto1` también cambia el valor de `objeto2`.
 Se dice que tienen la misma _identidad_. La vinculación `objeto3` apunta a un
 objeto diferente, que inicialmente contiene las mismas propiedades que
 `objeto1` pero vive una vida separada.
@@ -460,14 +460,14 @@ independiente de la forma en la que se comportan sus valores. Aunque los
 valores numéricos no cambian, puedes usar una ((vinculación)) `let` para hacer
 un seguimiento de un número que cambia al cambiar el valor al que apunta la
 vinculación. Del mismo modo, aunque una vinculación `const` a un objeto no
-pueda ser cambiada en si misma y continuará apuntando al mismo objeto,
+pueda ser cambiada en sí misma y continuará apuntando al mismo objeto,
 los _contenidos_ de ese objeto pueden cambiar.
 
 ```{test: no}
 const puntuacion = {visitantes: 0, locales: 0};
-// Esto esta bien
+// Esto está bien
 puntuacion.visitantes = 1;
-// Esto no esta permitido
+// Esto no está permitido
 puntuacion = {visitantes: 1, locales: 1};
 ```
 
@@ -475,7 +475,7 @@ puntuacion = {visitantes: 1, locales: 1};
 
 Cuando comparas objetos con el operador `==` en JavaScript, este los compara
 por identidad: producirá `true` solo si ambos objetos son precisamente
-el mismo valor. Comparar diferentes objetos retornara `false`, incluso
+el mismo valor. Comparar diferentes objetos retornará `false`, incluso
 si tienen propiedades idénticas. No hay una operación de comparación "profunda"
 incorporada en JavaScript, que compare objetos por contenidos,
 pero es posible que la escribas tu mismo (que es uno de los
@@ -485,7 +485,7 @@ pero es posible que la escribas tu mismo (que es uno de los
 
 {{index "weresquirrel example", lycanthropy, "addEntry function"}}
 
-Asi que Jacques inicia su intérprete de JavaScript y establece el
+Así que Jacques inicia su intérprete de JavaScript y establece el
 entorno que necesita para mantener su ((diario)).
 
 ```{includeCode: true}
@@ -507,11 +507,6 @@ el valor se toma de la vinculación con el mismo nombre.
 Entonces, todas las noches a las diez—o algunas veces a la mañana siguiente,
 después de bajar del estante superior de su biblioteca—Jacques registra el
 día.
-
-
-So then, every evening at ten—or sometimes the next morning, after
-climbing down from the top shelf of his bookcase—Jacques records the
-day.
 
 ```
 añadirEntrada(["trabajo", "toque un arbol", "pizza", "sali a correr",
@@ -536,7 +531,7 @@ generalmente se expresa como un valor que
 varia de -1 a 1. Una correlación de cero significa que las variables no estan
 relacionadas. Una correlación de uno indica que las dos están perfectamente
 relacionadas—si conoces una, también conoces la otra. Uno negativo también
-significa que las variables están perfectamente relacionadas pero que son
+significa que las variables están perfectamente relacionadas, pero que son
 opuestas—cuando una es verdadera, la otra es falsa.
 
 {{index "phi coefficient"}}
@@ -580,14 +575,14 @@ if}}
 if}}
 
 (Si en este momento estas bajando el libro para enfocarte en un terrible
-flashback a la clase de matemática de 10° grado—espera!
+flashback a la clase de matemática de 10° grado—¡espera!
 No tengo la intención de torturarte con infinitas páginas de notación
 críptica—solo esta fórmula para ahora. E incluso con esta,
 todo lo que haremos es convertirla en JavaScript.)
 
 La notación [_n_~01~]{if html}[[$n_{01}$]{latex}]{if tex} indica
 el número de mediciones donde la primera variable (ardilla) es
-falso (0) y la segunda variable (pizza) es verdadera (1). En la tabla
+falsa (0) y la segunda variable (pizza) es verdadera (1). En la tabla
 de pizza, [_n_~01~]{if html}[[$n_{01}$]{latex}]{if tex} es 9.
 
 El valor [_n_~1•~]{if html}[[$n_{1\bullet}$]{latex}]{if tex} se refiere
@@ -698,7 +693,7 @@ en la tabla.
 
 Ahora tenemos las herramientas que necesitamos para calcular las
 ((correlaciónes)) individuales. El único paso que queda es encontrar una
-correlación para cada tipo de evento que se escribio en el diario
+correlación para cada tipo de evento que se escribió en el diario
 y ver si algo se destaca.
 
 {{id for_of_loop}}
@@ -716,9 +711,9 @@ for (let i = 0; i < DIARIO.length; i++) {
 }
 ```
 
-Este tipo de ciclo es común en JavaScript clasico—ir a traves de los arrays
+Este tipo de ciclo es común en JavaScript clásico—ir a través de los arrays
 un elemento a la vez es algo que surge mucho, y para hacer eso
-correrias un contador sobre la longitud del array y elegirías cada
+correrías un contador sobre la longitud del array y elegirías cada
 elemento en turnos.
 
 Hay una forma más simple de escribir tales ciclos en JavaScript moderno.
@@ -804,7 +799,7 @@ for (let evento of eventosDiario(DIARIO)) {
 // → nueces:                  0.5902679812
 ```
 
-A-ha! Hay dos factores con una ((correlación)) que es claramente más fuerte
+¡Aja! Hay dos factores con una ((correlación)) que es claramente más fuerte
 que las otras. Comer ((nueces)) tiene un fuerte efecto positivo en
 la posibilidad de convertirse en una ardilla, mientras que cepillarse
 los dientes tiene un significativo efecto negativo.
@@ -834,7 +829,7 @@ no vuelven.
 Durante algunos años, las cosas van bien para Jacques. Pero en algún momento él
 pierde su trabajo. Porque vive en un país desagradable donde no tener trabajo
 significa que no tiene servicios médicos, se ve obligado a trabajar con
-a ((circo)) donde actua como _El Increible Hombre-Ardilla_,
+un ((circo)) donde actua como _El Increible Hombre-Ardilla_,
 llenando su boca con mantequilla de maní antes de cada presentación.
 
 Un día, harto de esta existencia lamentable, Jacques no puede cambiar
@@ -851,7 +846,7 @@ arrays útiles generalmente.
 
 {{index "push method", "pop method", "shift method", "unshift method"}}
 
-Vimos `push` y `pop`, que agregan y removen elementos en el
+Vimos `push` y `pop`, que agregan y remueven elementos en el
 final de un array, [anteriormente](datos#array_methods) en este
 capítulo. Los métodos correspondientes para agregar y remover cosas en
 el comienzo de un array se llaman `unshift` y `shift`.
@@ -874,7 +869,7 @@ function recordarUrgentemente(tarea) {
 Ese programa administra una cola de tareas. Agregas tareas al final de la
 cola al llamar `recordar("verduras")`, y cuando estés listo para hacer
 algo, llamas a `obtenerTarea()` para obtener (y eliminar) el elemento frontal
-de la cola. La función `recordarUrgentemente` también agrega una tarea pero
+de la cola. La función `recordarUrgentemente` también agrega una tarea, pero
 la agrega al frente en lugar de a la parte posterior de la cola.
 
 {{index [array, searching], "indexOf method", "lastIndexOf method"}}
@@ -884,7 +879,7 @@ Para buscar un valor específico, los arrays proporcionan un método `indexOf`
 Este busca a través del array desde el principio hasta el final y retorna el
 índice en el que se encontró el valor solicitado—o -1 si este no fue encontrado.
 Para buscar desde el final en lugar del inicio, hay un método similar
-llamado `lastIndexOf` ("ultimo indice de").
+llamado `lastIndexOf` ("último índice de").
 
 ```
 console.log([1, 2, 3, 2, 1].indexOf(2));
@@ -917,12 +912,12 @@ para copiar todo el array.
 
 {{index concatenation, "concat method"}}
 
-El método `concat` ("concatenar") se puede usar para unir arrays y asi crear un
+El método `concat` ("concatenar") se puede usar para unir arrays y así crear un
 nuevo array, similar a lo que hace el operador `+` para los strings.
 
 El siguiente ejemplo muestra tanto `concat` como `slice` en acción. Toma un
 array y un índice, y retorna un nuevo array que es una copia del
-array original pero eliminando al elemento en el índice dado:
+array original, pero eliminando al elemento en el índice dado:
 
 ```
 function remover(array, indice) {
@@ -934,7 +929,7 @@ console.log(remover(["a", "b", "c", "d", "e"], 2));
 ```
 
 Si a `concat` le pasas un argumento que no es un array, ese valor
-sera agregado al nuevo array como si este fuera un array de un solo elemento.
+será agregado al nuevo array como si este fuera un array de un solo elemento.
 
 ## Strings y sus propiedades
 
@@ -958,7 +953,7 @@ tales valores son inmutables y no pueden ser cambiados.
 {{index [string, methods], "slice method", "indexOf method", [string, searching]}}
 
 Pero estos tipos tienen propiedades integradas. Cada valor de string tiene un
-numero de metodos. Algunos muy útiles son `slice` e `indexOf`,
+número de métodos. Algunos muy útiles son `slice` e `indexOf`,
 que se parecen a los métodos de array de los mismos nombres.
 
 ```
@@ -1048,8 +1043,8 @@ son dados.
 
 {{indexsee "period character", "max example", spread}}
 
-Para escribir tal función, pones tres puntos antes del ultimo ((parámetro))
-de la función, asi:
+Para escribir tal función, pones tres puntos antes del último ((parámetro))
+de la función, así:
 
 ```
 function maximo(...numeros) {
@@ -1090,9 +1085,6 @@ La notación de corchetes para crear arrays permite al operador de tres-puntos
 extender otro array en el nuevo array:
 
 
-Square bracket array notation similarly allows the triple-dot operator
-to spread another array into the new array:
-
 ```
 let palabras = ["nunca", "entenderas"];
 console.log(["tu", ...palabras, "completamente"]);
@@ -1130,7 +1122,7 @@ Objeto `Math`, no tenemos que preocuparnos por sobrescribirla.
 
 Muchos lenguajes te detendrán, o al menos te advertirán, cuando estes por
 definir una vinculación con un nombre que ya este tomado. JavaScript hace
-esto para vinculaciones que hayas declarado con `let` o` const`
+esto para vinculaciones que hayas declarado con `let` o `const`
 pero-perversamente-no para vinculaciones estándar, ni para
 vinculaciones declaradas con `var` o `function`.
 
@@ -1176,7 +1168,7 @@ console.log(Math.random());
 {{index "pseudorandom number", "random number"}}
 
 Aunque las computadoras son máquinas deterministas—siempre reaccionan de la
-misma manera manera dada la misma entrada—es posible hacer que
+misma manera dada la misma entrada—es posible hacer que
 produzcan números que parecen aleatorios. Para hacer eso, la máquina mantiene
 algun valor escondido, y cada vez que le pidas un nuevo número aleatorio,
 realiza calculos complicados en este valor oculto para crear un nuevo valor.
@@ -1203,9 +1195,9 @@ expresión producirá, con la misma probabilidad, cualquier número desde 0 hast
 {{index "Math.ceil function", "Math.round function", "Math.abs function", "absolute value"}}
 
 También están las funciones `Math.ceil` (que redondea hacia arriba hasta llegar
-al número entero mas cercano), `Math.round` (al número entero más cercano), y
+al número entero más cercano), `Math.round` (al número entero más cercano), y
 `Math.abs`, que toma el valor absoluto de un número, lo que significa que
-niega los valores negativos pero deja los positivos tal y como estan.
+niega los valores negativos, pero deja los positivos tal y como están.
 
 ## Desestructurar
 
@@ -1243,7 +1235,7 @@ function phi([n00, n01, n10, n11]) {
 
 Esto también funciona para ((vinculaciones)) creadas con `let`, `var`, o
 `const`. Si sabes que el valor que estas vinculando es un array, puedes
-usar ((corchetes)) para "mirar dentro" del valor, y asi vincular sus
+usar ((corchetes)) para "mirar dentro" del valor, y así vincular sus
 contenidos.
 
 {{index object, "curly braces"}}
@@ -1269,7 +1261,7 @@ de esos valores.
 Ya que las propiedades solo agarran su valor, en lugar de contenerlo,
 los objetos y arrays se almacenan en la ((memoria)) de la computadora como
 secuencias de bits que contienen las _((dirección))es_—el lugar en la memoria—de
-sus contenidos. Asi que un array con otro array dentro de el consiste
+sus contenidos. Así que un array con otro array dentro de él consiste
 en (al menos) una región de memoria para el array interno, y otra para
 el array externo, que contiene (entre otras cosas) un número binario que
 representa la posición del array interno.
@@ -1300,7 +1292,7 @@ rodeados por comillas dobles, y solo se permiten expresiones de datos
 simples—sin llamadas a función, vinculaciones o cualquier otra cosa que
 involucre computaciones reales. Los comentarios no están permitidos en JSON.
 
-Una entrada de diario podria verse así cuando se representa como datos JSON:
+Una entrada de diario podría verse así cuando se representa como datos JSON:
 
 ```{lang: "application/json"}
 {
@@ -1341,7 +1333,7 @@ generalmente contienen cantidades variables de valores conceptualmente
 idénticos y usa números (comenzando desde 0) como los nombres de sus propiedades.
 
 Hay _algunas_ propiedades con nombre en los arrays, como `length` y un
-numero de metodos. Los métodos son funciones que viven en propiedades y
+número de métodos. Los métodos son funciones que viven en propiedades y
 (por lo general) actuan sobre el valor del que son una propiedad.
 
 Puedes iterar sobre los arrays utilizando un tipo especial de ciclo `for`—`for
@@ -1417,14 +1409,14 @@ el operador `=`) tenga el valor 1.
 {{index "range function", "for loop"}}
 
 Hacer que `rango` entienda valores de paso negativos es probablemente
-mas facil de realizar al escribir dos ciclos por separado—uno para contar
+más fácil de realizar al escribir dos ciclos por separado—uno para contar
 hacia arriba y otro para contar hacia abajo—ya que la comparación que verifica
 si el ciclo está terminado necesita ser `>=` en lugar de `<=` cuando se cuenta
 hacia abajo.
 
 También puede que valga la pena utilizar un paso predeterminado
 diferente, es decir -1, cuando el final del rango sea menor que el inicio.
-De esa manera, `rango(5, 2)` retornaria algo significativo, en lugar de quedarse
+De esa manera, `rango(5, 2)` retornaría algo significativo, en lugar de quedarse
 atascado en un ((ciclo infinito)). Es posible referirse a parámetros anteriores
 en el valor predeterminado de un parámetro.
 
@@ -1446,8 +1438,8 @@ Ninguno de los dos puede usar el método `reverse` estándar.
 {{index efficiency, "pure function", "side effect"}}
 
 Pensando en las notas acerca de los efectos secundarios y las funciones puras en
-el [capítulo anterior](funciones#pura), qué variante esperas que sea
-útil en más situaciones? Cuál corre más rápido?
+el [capítulo anterior](funciones#pura) ¿Qué variante esperas que sea
+útil en más situaciones? ¿Cuál corre más rápido?
 
 {{if interactive
 
@@ -1471,7 +1463,7 @@ if}}
 Hay dos maneras obvias de implementar `revertirArray`. La primera es
 simplemente pasar a traves del array de entrada de adelante hacia atrás y
 usar el metodo `unshift` en el nuevo array para insertar cada elemento en su
-inicio. La segundo es hacer un ciclo sobre el array de entrada de atrás hacia
+inicio. La segunda es hacer un ciclo sobre el array de entrada de atrás hacia
 adelante y usar el método `push`. Iterar sobre un array al revés requiere de
 una especificación (algo incómoda) del ciclo `for`, como
 `(let i = array.length - 1; i >= 0; i--)`.
@@ -1481,11 +1473,11 @@ una especificación (algo incómoda) del ciclo `for`, como
 Revertir al array en su lugar es más difícil. Tienes que tener cuidado de no
 sobrescribir elementos que necesitarás luego. Usar `revertirArray` o
 de lo contrario, copiar toda el array (`array.slice(0)` es una buena forma de
-copiar un array) funciona pero estás haciendo trampa.
+copiar un array) funciona, pero estás haciendo trampa.
 
 El truco consiste en _intercambiar_ el primer y el último elemento,
 luego el segundo y el penúltimo, y así sucesivamente. Puedes hacer esto
-haciendo un ciclo basandote en la mitad de la longitud del array
+haciendo un ciclo basándote en la mitad de la longitud del array
 (use `Math.floor` para redondear—no necesitas tocar el elemento del medio en
 un array con un número impar de elementos) e intercambiar el elemento en
 la posición `i` con el de la posición `array.length - 1 - i`. Puedes usar una
@@ -1583,7 +1575,7 @@ una especificación del ciclo `for` como esta se puede utilizar:
 for (let nodo = lista; nodo; nodo = nodo.resto) {}
 ```
 
-Puedes ver cómo eso funciona? En cada iteración del ciclo, `nodo` apunta
+¿Puedes ver cómo eso funciona? En cada iteración del ciclo, `nodo` apunta
 a la sublista actual, y el cuerpo puede leer su propiedad `valor` para
 obtener el elemento actual. Al final de una iteración, `nodo` se mueve a
 la siguiente sublista. Cuando eso es nulo, hemos llegado al final de la
@@ -1608,7 +1600,7 @@ hint}}
 {{index "deep comparison (exercise)", comparison, "deep comparison", "== operator"}}
 
 El operador `==` compara objetos por identidad. Pero a veces
-preferirias comparar los valores de sus propiedades reales.
+preferirías comparar los valores de sus propiedades reales.
 
 Escribe una función `igualdadProfunda` que toma dos valores y retorne `true`
 solo si tienen el mismo valor o son objetos con las mismas
@@ -1657,7 +1649,7 @@ otros casos, puede retornar inmediatamente el resultado de aplicar `===`.
 {{index "Object.keys function"}}
 
 Usa `Object.keys` para revisar las propiedades. Necesitas probar si
-ambos objetos tienen el mismo conjunto de nombres de propiedad y si esos
+ambos objetos tienen el mismo conjunto de nombres de propiedad y si esas
 propiedades tienen valores idénticos. Una forma de hacerlo es garantizar que
 ambos objetos tengan el mismo número de propiedades (las longitudes de
 las listas de propiedades son las mismas). Y luego, al hacer un ciclo sobre

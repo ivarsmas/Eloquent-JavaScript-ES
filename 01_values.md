@@ -34,11 +34,11 @@ de esa manera ser representada en bits.
 
 {{index "binary number", radix, "decimal number"}}
 
-Por ejemplo, podemos expresar el numero 13 en bits. Funciona de la misma
+Por ejemplo, podemos expresar el número 13 en bits. Funciona de la misma
 manera que un número decimal, pero en vez de 10 diferentes dígitos, solo
 tienes 2, y el peso de cada uno aumenta por un factor de 2 de derecha a
 izquierda. Aquí tenemos los bits que conforman el número 13, con el peso
-de cada dígito mostrado debajo de el:
+de cada dígito mostrado debajo de él:
 
 ```{lang: null}
    0   0   0   0   1   1   0   1
@@ -52,16 +52,16 @@ Entonces ese es el número binario 00001101, o 8 + 4 + 1, o 13.
 {{index memory, "volatile data storage", "hard drive"}}
 
 Imagina un mar de bits—un océano de ellos. Una computadora moderna
-promedio tiene mas de 30 billones de bits en su almacenamiento de datos
+promedio tiene más de 30 billones de bits en su almacenamiento de datos
 volátiles (memoria funcional). El almacenamiento no volátil
-(disco duro o equivalente) tiende a tener unas cuantas mas ordenes de magnitud.
+(disco duro o equivalente) tiende a tener unas cuantas más órdenes de magnitud.
 
 Para poder trabajar con tales cantidades de bits sin perdernos,
 debemos separarlos en porciones que representen pedazos de información.
 En un entorno de JavaScript, esas porciones son llamadas _((valores))_.
 Aunque todos los valores están hechos de bits, estos juegan papeles diferentes.
 Cada valor tiene un ((tipo)) que determina su rol. Algunos valores son números,
-otros son pedazos de texto, otros son funciones, y asi sucesivamente.
+otros son pedazos de texto, otros son funciones, y así sucesivamente.
 
 {{index "garbage collection"}}
 
@@ -76,7 +76,7 @@ Tan pronto como dejes de utilizar un valor, este se disipará, dejando atrás
 sus bits para que estos sean reciclados como material de construcción para la
 próxima generación de valores.
 
-Este capitulo introduce los elementos atómicos de los programas en JavaScript,
+Este capítulo introduce los elementos atómicos de los programas en JavaScript,
 estos son, los tipos de valores simples y los operadores que actúan en
 tales valores.
 
@@ -93,7 +93,7 @@ En un programa hecho en JavaScript, se escriben de la siguiente manera:
 
 {{index "binary number"}}
 
-Utiliza eso en un programa, y ocasionara que el patron de bits
+Utiliza eso en un programa, y ocasionará que el patron de bits
 que representa el número 13 sea creado dentro de la memoria de la computadora.
 
 {{index [number, representation], bit}}
@@ -107,7 +107,7 @@ representados es 10^N^. Del mismo modo, dados 64 dígitos binarios, podemos
 representar 2^64^ números diferentes, lo que es alrededor de 18 mil trillones
 (un 18 con 18 ceros más). Eso es muchísimo.
 
-La memoria de un computador solía ser mucho mas pequeña que en la actualidad,
+La memoria de un computador solía ser mucho más pequeña que en la actualidad,
 y las personas tendían a utilizar grupos de 8 o 16 bits para representar sus
 números. Era común accidentalmente _((desbordar))_ esta limitación— terminando
 con un número que no cupiera dentro de la cantidad dada de bits. Hoy en día,
@@ -123,7 +123,7 @@ trillones caben en un número de JavaScript. Esos bits también almacenan
 números negativos, por lo que un bit indica el signo de un número. Un problema
 mayor es que los números no enteros tienen que ser representados también.
 Para hacer esto, algunos de los bits son usados para almacenar la posición
-del punto decimal. El número entero mas grande que puede ser
+del punto decimal. El número entero más grande que puede ser
 almacenado está en el rango de los 9 trillones (15 ceros)—lo cual es
 todavía placenteramente inmenso.
 
@@ -150,7 +150,7 @@ Eso es 2.998 × 10^8^ = 299,800,000.
 {{index pi, [number, "precision of"], "floating-point number"}}
 
 Los cálculos con números enteros (también llamados _((integer))s_)
-mas pequeños a los 9 trillones anteriormente mencionados están
+más pequeños a los 9 trillones anteriormente mencionados están
 garantizados a ser siempre precisos. Desafortunadamente, los calculos
 con números fraccionarios, generalmente no lo son. Así como π (pi) no puede
 ser precisamente expresado por un número finito de números decimales,
@@ -166,7 +166,7 @@ no como valores precisos.
 
 Lo que mayormente se hace con los números es aritmética. Operaciones aritméticas
 tales como la adición y la multiplicación, toman dos valores numéricos y
-producen un nuevo valor a raíz de ellos. Asi es como lucen en JavaScript:
+producen un nuevo valor a raíz de ellos. Así es como lucen en JavaScript:
 
 ```
 100 + 4 * 11
@@ -182,7 +182,7 @@ dos valores aplicará la operación asociada a esos valores y producirá un nuev
 
 ¿Pero el ejemplo significa "agrega 4 y 100, y multiplica el resultado por 11",
 o es la multiplicación aplicada antes de la adición? Como quizás hayas
-podido adivinar, la multiplicación sucede primero. Pero asi como en
+podido adivinar, la multiplicación sucede primero. Pero así como en
 las matemáticas, puedes cambiar este orden envolviendo la adición en paréntesis:
 
 ```
@@ -212,20 +212,20 @@ El símbolo `%` es utilizado para representar la operación de _residuo_.
 `X % Y` es el residuo de dividir `X` entre `Y`. Por ejemplo, `314 % 100`
 produce `14`, y `144 % 12` produce `0`. La precedencia del residuo es la
 la misma que la de la multiplicación y la división. Frecuentemente veras
-que este operador es tambien conocido como _modulo_.
+que este operador es también conocido como _modulo_.
 
 ### Números especiales
 
 {{index [number, "special values"]}}
 
 Existen 3 valores especiales en JavaScript que son considerados
-números pero que no se comportan como números normales.
+números, pero que no se comportan como números normales.
 
 {{index infinity}}
 
 Los primeros dos son `Infinity` y `-Infinity`, los cuales representan las
-infinidades positivas y negativas. `Infinity - 1` aun es
-`Infinity`, y asi sucesivamente. A pesar de esto, no confíes mucho
+infinidades positivas y negativas. `Infinity - 1` aún es
+`Infinity`, y así sucesivamente. A pesar de esto, no confíes mucho
 en computaciones que dependan de infinidades. Estas no son matemáticamente
 confiables, y puede que muy rápidamente nos resulten en el próximo número
 especial: `NaN`.
@@ -262,33 +262,33 @@ y al final coincidan.
 {{index "line break", "newline character"}}
 
 Casi todo puede ser colocado entre comillas, y JavaScript construirá
-un valor string a partir de ello. Pero algunos caracteres son mas difíciles.
+un valor string a partir de ello. Pero algunos carácteres son más difíciles.
 Te puedes imaginar que colocar comillas entre comillas podría ser difícil.
-Los _Newlines_ (los caracteres que obtienes cuando presionas la tecla de Enter)
+Los _Newlines_ (los carácteres que obtienes cuando presionas la tecla de Enter)
 solo pueden ser incluidos cuando el string está encapsulado con comillas
 invertidas (`` ` ``).
 
 {{index [escaping, "in strings"], "backslash character"}}
 
-Para hacer posible incluir tales caracteres en un string, la siguiente
+Para hacer posible incluir tales carácteres en un string, la siguiente
 notación es utilizada: cuando una barra invertida (`\`) es encontrada dentro de
 un texto entre comillas, indica que el carácter que le sigue tiene un
 significado especial. Esto se conoce como _escapar_ el carácter.
 Una comilla que es precedida por una barra invertida no representará
 el final del string sino que formara parte del mismo. Cuando el
 carácter `n` es precedido por una barra invertida, este se interpreta
-como un Newline (salto de linea). De la mima forma, `t` después de una barra
+como un Newline (salto de línea). De la mima forma, `t` después de una barra
 invertida, se interpreta como un character de tabulación.
 Toma como referencia el siguiente string:
 
 ```
-"Esta es la primera linea\nY esta es la segunda"
+"Esta es la primera línea\nY esta es la segunda"
 ```
 
 El texto actual es este:
 
 ```{lang: null}
-Esta es la primera linea
+Esta es la primera línea
 Y esta es la segunda
 ```
 
@@ -296,11 +296,11 @@ Se encuentran, por supuesto, situaciones donde queremos que una barra
 invertida en un string solo sea una barra invertida, y no un carácter
 especial. Si dos barras invertidas prosiguen una a la otra, serán
 colapsadas y sólo una permanecerá en el valor resultante del string.
-Asi es como el string "_Un carácter de salto de linea es escrito
+Así es como el string "_Un carácter de salto de línea es escrito
 así: `"`\n`"`._" puede ser expresado:
 
 ```
-Un carácter de salto de linea es escrito así: \"\\n\"."
+Un carácter de salto de línea es escrito así: \"\\n\"."
 ```
 
 {{id unicode}}
@@ -310,8 +310,8 @@ Un carácter de salto de linea es escrito así: \"\\n\"."
 También los strings deben de ser modelados como una serie de bits para poder
 existir dentro del computador. La forma en la que JavaScript hace esto
 es basada en el estándar _((Unicode))_. Este estándar asigna un número a
-todo carácter que alguna vez pudieras necesitar, incluyendo caracteres en
-Griego, Árabe, Japones, Armenio, y asi sucesivamente. Si tenemos un número para
+todo carácter que alguna vez pudieras necesitar, incluyendo carácteres en
+Griego, Árabe, Japones, Armenio, y así sucesivamente. Si tenemos un número para
 representar cada carácter, un string puede ser descrito como una
 secuencia de números.
 
@@ -319,11 +319,11 @@ secuencia de números.
 
 Y eso es lo que hace JavaScript. Pero hay una complicación:
 La representación de JavaScript usa 16 bits por cada elemento string, en
-el cual caben 2^16^ números diferentes. Pero Unicode define mas caracteres
+el cual caben 2^16^ números diferentes. Pero Unicode define más carácteres
 que aquellos—aproximadamente el doble, en este momento.
-Entonces algunos caracteres, como muchos emojis, necesitan ocupar dos
-"posiciones de caracteres" en los strings de JavaScript. Volveremos a este
-tema en el [Capitulo 5](orden_superior#unidades_de_codigo).
+Entonces algunos carácteres, como muchos emojis, necesitan ocupar dos
+"posiciones de carácteres" en los strings de JavaScript. Volveremos a este
+tema en el [Capítulo 5](orden_superior#unidades_de_codigo).
 
 {{index "+ operator", concatenation}}
 
@@ -343,10 +343,10 @@ a estas en el [Capítulo 4](datos#metodos).
 {{index interpolation, backtick}}
 
 Los strings escritos con comillas simples o dobles se comportan
-casi de la misma manera—La unica diferencia es el tipo de comilla que necesitamos
+casi de la misma manera—La única diferencia es el tipo de comilla que necesitamos
 para escapar dentro de ellos. Los strings de comillas inversas, usualmente
 llamados _((plantillas literales))_, pueden realizar algunos trucos
-más. Mas alla de permitir saltos de lineas, pueden también incrustar otros
+más. Más allá de permitir saltos de líneas, pueden también incrustar otros
 valores.
 
 ```
@@ -361,7 +361,7 @@ posición. El ejemplo anterior produce "_la mitad de 100 es 50_".
 
 {{index operator, "typeof operator", type}}
 
-No todo los operadores son simbolos. Algunos se escriben como palabras.
+No todo los operadores son símbolos. Algunos se escriben como palabras.
 Un ejemplo es el operador `typeof`, que produce un string con el nombre
 del tipo de valor que le demos.
 
@@ -378,12 +378,12 @@ console.log(typeof "x")
 
 Usaremos `console.log` en los ejemplos de código para indicar que
 que queremos ver el resultado de alguna evaluación.
-Mas acerca de esto esto en el [proximo capitulo](estructura_de_programa).
+Más acerca de esto esto en el [próximo capítulo](estructura_de_programa).
 
 {{index negation, "- operator", "binary operator", "unary operator"}}
 
 En los otros operadores que hemos visto hasta ahora, todos operaban en
-dos valores, pero `typeof` sola opera con un valor. Los operadores que usan
+dos valores, pero `typeof` solo opera con un valor. Los operadores que usan
 dos valores son llamados operadores _binarios_, mientras que aquellos
 operadores que usan uno son llamados operadores _unarios_. El operador menos
 puede ser usado tanto como un operador binario o como un operador unario.
@@ -397,7 +397,7 @@ console.log(- (10 - 2))
 
 {{index Boolean, operator, true, false, bit}}
 
-Es frecuentemente util tener un valor que distingue entre solo dos
+Es frecuentemente útil tener un valor que distingue entre solo dos
 posibilidades, como "si", y "no", o "encendido" y "apagado". Para este
 propósito, JavaScript tiene el tipo _Boolean_, que tiene solo dos valores:
 true (verdadero) y false (falso) que se escriben de la misma forma.
@@ -434,9 +434,9 @@ console.log("Aardvark" < "Zoroaster")
 La forma en la que los strings son ordenados, es aproximadamente alfabético,
 aunque no realmente de la misma forma que esperaríamos ver en un diccionario:
 las letras mayúsculas son siempre "menores que" las letras minúsculas, así que
-`"Z" < "a"`, y caracteres no alfabéticos (como `!`, `-` y demás) son también
+`"Z" < "a"`, y carácteres no alfabéticos (como `!`, `-` y demás) son también
 incluidos en el ordenamiento. Cuando comparamos strings, JavaScript evalúa
-los caracteres  de izquierda a derecha, comparando los códigos ((Unicode))
+los carácteres  de izquierda a derecha, comparando los códigos ((Unicode))
 uno por uno.
 
 {{index equality, ">= operator", "<= operator", "== operator", "!= operator"}}
@@ -520,7 +520,7 @@ posible sea necesaria:
 
 {{index "conditional execution", "ternary operator", "?: operator", "conditional operator", "colon character", "question mark"}}
 
-El ultimo operador lógico que discutiremos no es unario, tampoco binario,
+El último operador lógico que discutiremos no es unario, tampoco binario,
 sino _ternario_, esto es, que opera en tres valores. Es escrito con un
 signo de interrogación y dos puntos, de esta forma:
 
@@ -546,7 +546,7 @@ usados para denotar la ausencia de un valor _significativo_. Son en si mismos
 valores, pero no traen consigo información.
 
 Muchas operaciones en el lenguaje que no producen un valor significativo
-(veremos algunas mas adelante), producen `undefined` simplemente porque tienen
+(veremos algunas más adelante), producen `undefined` simplemente porque tienen
 que producir _algún_ valor.
 
 La diferencia en significado entre `undefined` y `null` es un accidente del
@@ -558,7 +558,7 @@ mayormente recomiendo que los trates como intercambiables.
 
 {{index NaN, "type coercion"}}
 
-En la Introducción, mencione que JavaScript tiende a salirse de su camino para
+En la Introducción, mencioné que JavaScript tiende a salirse de su camino para
 aceptar casi cualquier programa que le demos, incluso programas que hacen cosas
 extrañas. Esto es bien demostrado por las siguientes expresiones:
 
@@ -591,7 +591,7 @@ numérica, entonces el `1` es convertido a `"1"` (de número a string)
 Cuando algo que no se traduce a un número en una manera obvia (tal como
 `"cinco"` o `undefined`) es convertido a un número, obtenemos el valor
 `NaN`. Operaciones aritméticas subsecuentes con `NaN`, continúan
-produciendo `NaN`, asi que si te encuentras obteniendo uno de estos
+produciendo `NaN`, así que si te encuentras obteniendo uno de estos
 valores en algun lugar inesperado, busca por coerciones de tipo accidentales.
 
 {{index null, undefined, [comparison, "of undefined values"], "== operator"}}
@@ -612,7 +612,7 @@ console.log(null == 0);
 // → false
 ```
 
-Este comportamiento es frecuentemente util. Cuando queremos probar
+Este comportamiento es frecuentemente útil. Cuando queremos probar
 si un valor tiene un valor real en vez de `null` o `undefined`, puedes
 compararlo con `null` usando el operador `==` (o `!=`).
 
@@ -623,15 +623,15 @@ al valor `false`? Las reglas para convertir strings y números a valores
 Booleanos, dice que `0`, `NaN`, y el string vació (`""`) cuentan como `false`,
 mientras que todos los otros valores cuentan como `true`. Debido a esto,
 expresiones como `0 == false`, y `"" == false` son también verdaderas.
-Cuando no queremos ninguna conversion de tipo automática, existen otros
+Cuando no queremos ninguna conversión de tipo automática, existen otros
 dos operadores adicionales: `===` y `!==`. El primero prueba si un valor
 es _precisamente_ igual al otro, y el segundo prueba si un valor no es
 precisamente igual. Entonces `"" === false` es falso, como es de esperarse.
 
-Recomiendo usar el operador de comparación de tres caracteres de una manera
+Recomiendo usar el operador de comparación de tres carácteres de una manera
 defensiva para prevenir que conversiones de tipo inesperadas te estorben.
 Pero cuando estés seguro de que el tipo va a ser el mismo en ambos lados, no es
-problemático utilizar los operadores mas cortos.
+problemático utilizar los operadores más cortos.
 
 ### Corto circuito de operadores lógicos
 
@@ -663,7 +663,7 @@ console.log("Agnes" || "usuario")
 Podemos utilizar esta funcionalidad como una forma de recurrir a
 un valor por defecto. Si tenemos un valor que puede estar vacío,
 podemos usar `||` después de este para remplazarlo con otro valor.
-Si el valor inicial puede ser convertido a falso, obtendra el
+Si el valor inicial puede ser convertido a falso, obtendrá el
 reemplazo en su lugar.
 
 {{index "&& operator"}}
@@ -674,7 +674,7 @@ ese valor, y de lo contrario, devuelve el valor a su derecha.
 
 Otra propiedad importante de estos dos operadores es que la parte
 de su derecha solo es evaluada si es necesario. En el caso de
-de `true || X`, no importa que sea `X`—aun si es una pieza del programa
+de `true || X`, no importa que sea `X`—aún si es una pieza del programa
 que hace algo _terrible_—el resultado será verdadero, y `X` nunca
 sera evaluado. Lo mismo sucede con `false && X`, que es falso e ignorará
 `X`. Esto es llamado _((evaluación de corto circuito))_.
@@ -700,5 +700,5 @@ ternario (`?:`) para elegir uno de dos valores basándose en un tercer valor.
 
 Esto te dá la información suficiente para usar JavaScript como una
 calculadora de bolsillo, pero no para mucho más. El [próximo
-capitulo](estructura_de_programa) empezará a juntar estas expresiones
+capítulo](estructura_de_programa) empezará a juntar estas expresiones
 para formar programas básicos.

@@ -129,7 +129,7 @@ mucho acerca de lo qué está pasando en el entorno global.
 {{index "let keyword", "const keyword", "var keyword"}}
 
 Vinculaciones declaradas con `let` y `const` son, de hecho, locales al
-_((bloque))_ donde esten declarados, así que si creas uno de esas
+_((bloque))_ donde estén declarados, así que si creas uno de esas
 dentro de un ciclo, el código antes y después del ciclo no puede "verlas".
 En JavaScript anterior a 2015, solo las funciones creaban nuevos alcances,
 por lo que las vinculaciones de estilo-antiguo, creadas con la palabra clave
@@ -144,7 +144,7 @@ if (true) {
   console.log(x + y + z);
   // → 60
 }
-// y no es visible desde aqui
+// y no es visible desde aquí
 console.log(x + z);
 // → 40
 ```
@@ -212,7 +212,7 @@ de la función externa. Pero sus vinculaciones locales, como `unidad` o
 En resumen, cada alcance local puede ver también todos los alcances locales que
 lo contengan. El conjunto de vinculaciones visibles dentro de un bloque
 está determinado por el lugar de ese bloque en el texto del programa.
-Cada alcance local puede tambien ver todos los alcances locales que lo
+Cada alcance local puede también ver todos los alcances locales que lo
 contengan, y todos los alcances pueden ver el alcance global.
 Este enfoque para la visibilidad de vinculaciones es
 llamado _((alcance léxico))_.
@@ -245,7 +245,7 @@ if (modoSeguro) {
 
 {{index [function, "higher-order"]}}
 
-En el [Capitulo 5](orden_superior), discutiremos las cosas interesantes
+En el [Capítulo 5](orden_superior), discutiremos las cosas interesantes
 que se pueden hacer al pasar valores de función a otras funciones.
 
 ## Notación de declaración
@@ -265,7 +265,7 @@ function cuadrado(x) {
 {{index future, "execution order"}}
 
 Esta es una _declaración_ de función. La declaración define la vinculación
-`cuadrado` y la apunta a la función dada. Esto es un poco mas facil
+`cuadrado` y la apunta a la función dada. Esto es un poco más fácil
 de escribir, y no requiere un punto y coma después de la función.
 
 Hay una sutileza con esta forma de definir una función.
@@ -274,7 +274,7 @@ Hay una sutileza con esta forma de definir una función.
 console.log("El futuro dice:", futuro());
 
 function futuro() {
-  return "Nunca tendran autos voladores";
+  return "Nunca tendrán autos voladores";
 }
 ```
 
@@ -317,7 +317,7 @@ el cuerpo de la función. Expresa algo así como "esta entrada (los
 Cuando solo haya un solo nombre de parámetro, los ((paréntesis)) alrededor de
 la lista de parámetros pueden ser omitidos. Si el cuerpo es una sola expresión,
 en lugar de un ((bloque)) en llaves, esa expresión será retornada por parte
-de la función. Asi que estas dos definiciones de `cuadrado` hacen la misma
+de la función. Así que estas dos definiciones de `cuadrado` hacen la misma
 cosa:
 
 ```
@@ -341,7 +341,7 @@ expresiones `function` en el lenguaje. Aparte de un detalle menor,
 que discutiremos en [Capítulo 6](objeto), estas hacen lo mismo.
 Las funciones de flecha se agregaron en 2015, principalmente para que fuera
 posible escribir pequeñas expresiones de funciones de una manera menos
-verbosa. Las usaremos mucho en el [Capitulo 5](orden_superior).
+verbosa. Las usaremos mucho en el [Capítulo 5](orden_superior).
 
 {{id stack}}
 
@@ -351,7 +351,7 @@ verbosa. Las usaremos mucho en el [Capitulo 5](orden_superior).
 {{index "call stack", [function, application]}}
 
 La forma en que el control fluye a través de las funciones es algo
-complicado. Vamos a écharle un vistazo más de cerca. Aquí hay un simple
+complicado. Vamos a echarle un vistazo más de cerca. Aquí hay un simple
 programa que hace unas cuantas llamadas de función:
 
 ```
@@ -359,7 +359,7 @@ function saludar(quien) {
   console.log("Hola " + quien);
 }
 saludar("Harry");
-console.log("Adios");
+console.log("Adiós");
 ```
 
 {{index "control flow", "execution order", "console.log"}}
@@ -373,8 +373,6 @@ línea 4. La línea que sigue llama a `console.log` nuevamente. Después
 que esta función retorna, el programa llega a su fin.
 
 Podríamos mostrar el flujo de control esquemáticamente de esta manera:
-
-We could show the flow of control schematically like this:
 
 ```{lang: null}
 no en una función
@@ -405,7 +403,7 @@ Almacenar esta pila requiere espacio en la memoria de la computadora. Cuando
 la pila crece demasiado grande, la computadora fallará con un mensaje como
 "fuera de espacio de pila" o "demasiada recursividad". El siguiente código
 ilustra esto haciendo una pregunta realmente difícil a la computadora, que
-causara un ir y venir infinito entre las dos funciones. Mejor dicho,
+causará un ir y venir infinito entre las dos funciones. Mejor dicho,
 _sería_ infinito, si la computadora tuviera una pila infinita. Como son
 las cosas, nos quedaremos sin espacio, o "explotaremos la pila".
 
@@ -450,7 +448,7 @@ Y nadie te dira nada acerca de eso.
 La ventaja es que este comportamiento se puede usar para permitir que
 una función sea llamada con diferentes cantidades de argumentos. Por ejemplo,
 esta función `menos` intenta imitar al operador `-` actuando ya sea en uno o
-dos argumentos
+dos argumentos:
 
 ```
 function menos(a, b) {
@@ -497,7 +495,7 @@ En el [próximo capítulo](datos#parametros_rest), veremos una forma en el
 que el cuerpo de una función puede obtener una lista de todos los argumentos
 que son pasados. Esto es útil porque hace posible que una función
 acepte cualquier cantidad de argumentos. Por ejemplo, `console.log` hace
-esto—muetra en la consola todos los valores que se le den.
+esto—muestra en la consola todos los valores que se le den.
 
 ```
 console.log("C", "O", 2);
@@ -510,7 +508,7 @@ console.log("C", "O", 2);
 
 La capacidad de tratar a las funciones como valores, combinado con el hecho de
 que las vinculaciones locales se vuelven a crear cada vez que una sea función
-es llamada, trae a la luz una pregunta interesante. Qué sucede con las
+es llamada, trae a la luz una pregunta interesante. ¿Qué sucede con las
 vinculaciones locales cuando la llamada de función que los creó ya no
 está activa?
 
@@ -540,10 +538,10 @@ distintas vinculaciones locales entre sí.
 
 Esta característica—poder hacer referencia a una instancia específica
 de una vinculación local en un alcance encerrado—se llama _((cierre))_.
-Una función que que hace referencia a vinculaciones de alcances locales
+Una función que hace referencia a vinculaciones de alcances locales
 alrededor de ella es llamada _un_ cierre.
 Este comportamiento no solo te libera de tener que preocuparte
-por la duración de las vinculaciones pero también hace posible usar valores de
+por la duración de las vinculaciones sino que también hace posible usar valores de
 funciones en algunas formas bastante creativas.
 
 {{index "multiplier function"}}
@@ -620,8 +618,8 @@ terminos de memoria que llamar a una función multiples veces.
 
 El dilema de velocidad versus ((elegancia)) es interesante.
 Puedes verlo como una especie de compromiso entre accesibilidad-humana y
-accesibilidad-maquina. Casi cualquier programa se puede hacer más
-rápido haciendolo más grande y complicado. El programador tiene que
+accesibilidad-máquina. Casi cualquier programa se puede hacer más
+rápido haciéndolo más grande y complicado. El programador tiene que
 decidir acerca de cual es un equilibrio apropiado.
 
 En el caso de la función `potencia`, la versión poco elegante (con el ciclo)
@@ -688,7 +686,7 @@ console.log(encontrarSolucion(24));
 ```
 
 Ten en cuenta que este programa no necesariamente encuentra la secuencia de
-operaciones _mas corta_. Este está satisfecho cuando encuentra cualquier
+operaciones _más corta_. Este está satisfecho cuando encuentra cualquier
 secuencia que funcione.
 
 Está bien si no ves cómo funciona el programa de inmediato. Vamos a trabajar
@@ -737,10 +735,10 @@ encontrar(1, "1")
 ```
 
 La indentación indica la profundidad de la pila de llamadas. La primera vez
-que `encontrar` es llamada, comienza llamandose a sí misma para explorar
-la solución que comienza con `(1 + 5)`. Esa llamada hara uso de la recursión
+que `encontrar` es llamada, comienza llamándose a sí misma para explorar
+la solución que comienza con `(1 + 5)`. Esa llamada hará uso de la recursión
 aún más para explorar _cada_ solución continuada que produzca un número menor
-o igual a el número objetivo. Como no encuentra uno que llegue al objetivo,
+o igual al número objetivo. Como no encuentra uno que llegue al objetivo,
 retorna `null` a la primera llamada. Ahí el operador `||` genera la llamada
 que explora `(1 * 3)` para que esta suceda. Esta búsqueda tiene más
 suerte—su primera llamada recursiva, a través de _otra_ llamada recursiva,
@@ -812,9 +810,9 @@ Escribir `.length` después de una expresión de string nos dará la longitud de
 dicho string. Por lo tanto, los ciclos `while` seguiran sumando ceros delante
 del string de numeros hasta que este tenga al menos tres caracteres de longitud.
 
-Misión cumplida! Pero justo cuando estamos por enviar el código a la
+¡Misión cumplida! Pero justo cuando estamos por enviar el código a la
 agricultora (junto con una considerable factura), ella nos llama y nos dice
-que ella también comenzó a criar cerdos, y que si no podríamos extender
+que ella también comenzó a criar cerdos, y que si ¿No podríamos extender
 el software para imprimir cerdos también?
 
 {{index "copy-paste programming"}}
@@ -843,7 +841,7 @@ imprimirInventarioGranja(7, 11, 3);
 
 {{index [function, naming]}}
 
-Funciona! Pero ese nombre, `imprimirEtiquetaAlcochadaConCeros`, es un poco
+¡Funciona! Pero ese nombre, `imprimirEtiquetaAlcochadaConCeros`, es un poco
 incómodo. Combina tres cosas—impresión, alcochar con ceros y añadir
 una etiqueta—en una sola función.
 
@@ -880,7 +878,7 @@ números en una manera alineada.
 
 {{index [interface, design]}}
 
-Que tan inteligente y versátil _deberia_ de ser nuestra función? Podríamos
+¿Qué tan inteligente y versátil _deberia_ de ser nuestra función? Podríamos
 escribir cualquier cosa, desde una función terriblemente simple que solo
 pueda alcochar un número para que tenga tres caracteres de ancho,
 a un complicado sistema generalizado de formateo de números que maneje
@@ -916,7 +914,7 @@ secundarios.
 {{index substitution}}
 
 Una función _pura_ es un tipo específico de función de producción-de-valores
-que no solo no tiene efectos secundarios pero que tampoco depende de los
+que no solo no tiene efectos secundarios sino que tampoco depende de los
 efectos secundarios de otro código—por ejemplo, no lee vinculaciones globales
 cuyos valores puedan cambiar. Una función pura tiene la propiedad agradable
 de que cuando se le llama con los mismos argumentos, siempre produce el
@@ -967,7 +965,7 @@ Vinculaciones declaradas con `var` se comportan de manera
 diferente—terminan en el alcance de la función más cercana o en el alcance global.
 
 Separar las tareas que realiza tu programa en diferentes funciones es
-util. No tendrás que repetirte tanto, y las funciones pueden
+útil. No tendrás que repetirte tanto, y las funciones pueden
 ayudar a organizar un programa agrupando el código en piezas que hagan
 cosas especificas.
 
@@ -985,7 +983,7 @@ dos argumentos y retorne su mínimo.
 {{if interactive
 
 ```{test: no}
-// Tu codigo aqui.
+// Tu código aquí.
 
 console.log(min(0, 10));
 // → 0
@@ -1029,13 +1027,13 @@ número entero, positivo) y devolver un Booleano.
 
 {{index "stack overflow"}}
 
-Pruébalo con 50 y 75. Observa cómo se comporta con -1. Por qué?
-Puedes pensar en una forma de arreglar esto?
+Pruébalo con 50 y 75. Observa cómo se comporta con -1. ¿Por qué?
+¿Puedes pensar en una forma de arreglar esto?
 
 {{if interactive
 
 ```{test: no}
-// Tu codigo aqui.
+// Tu código aquí.
 
 console.log(esPar(50));
 // → true
@@ -1084,7 +1082,7 @@ Escribe una función `contarFs` que tome un string como su único argumento
 y devuelva un número que indica cuántos caracteres "F" en mayúsculas
 haya en el string.
 
-Despues, escribe una función llamada `contarCaracteres` que se comporte
+Después, escribe una función llamada `contarCaracteres` que se comporte
 como `contarFs`, excepto que toma un segundo argumento que indica el carácter
 que debe ser contado (en lugar de contar solo caracteres "F" en mayúscula).
 Reescribe `contarFs` para que haga uso de esta nueva función.

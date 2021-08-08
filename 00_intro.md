@@ -12,7 +12,7 @@ el orden, la reglas y la claridad.
 
 quote}}
 
-Este es un libro acerca de instruir ((computadora))s. Hoy en dia las
+Este es un libro acerca de instruir ((computadora))s. Hoy en día las
 computadoras son tan comunes como los destornilladores (aunque bastante más
 complejas que estos), y hacer que hagan exactamente lo que quieres que
 hagan no siempre es fácil.
@@ -34,7 +34,7 @@ Afortunadamente, si puedes superar eso, y tal vez incluso disfrutar el rigor
 de pensar en términos que las máquinas tontas puedan manejar, la programación
 puede ser muy gratificante. Te permite hacer en segundos cosas que
 tardarían _siglos_ a mano. Es una forma de hacer que tu herramienta
-computadora haga cosas que antes no podía. Ademas proporciona de un maravilloso
+computadora haga cosas que antes no podía. Además proporciona de un maravilloso
 ejercicio en pensamiento abstracto.
 
 La mayoría de la programación se realiza con ((lenguajes de programación)).
@@ -259,7 +259,7 @@ Esta versión nos da algunas mejoras más. La más importante, ya
 no hay necesidad de especificar la forma en que queremos que el programa salte
 hacia adelante y hacia atrás. El constructo del lenguaje `while` se ocupa
 de eso. Este continúa ejecutando el bloque de código (envuelto en llaves)
-debajo de el, siempre y cuando la condición que se le dio se mantenga.
+debajo de él, siempre y cuando la condición que se le dio se mantenga.
 Esa condición es `cuenta <= 10`, lo que significa "_cuenta_ es menor o igual a
 10". Ya no tenemos que crear un valor temporal y compararlo con cero,
 lo cual era un detalle poco interesante. Parte del poder de los lenguajes de
@@ -406,7 +406,7 @@ escrito una solución funcional para resolverlos.
 
 Te recomiendo que pruebes tus soluciones a los ejercicios en un intérprete real
 de JavaScript. De esta forma, obtendrás retroalimentación inmediata acerca
-de que si esta funcionando lo que estás haciendo, y, espero, serás tentado
+de que si esta funcionando lo que estás haciendo, y espero, serás tentado
 a ((experimentar)) e ir más allá de los ejercicios.
 
 {{if interactive
@@ -463,7 +463,7 @@ La parte del lenguaje del libro comienza con cuatro capítulos para presentar
 la estructura básica del lenguaje de JavaScript. Estos introducen
 [estructuras de control](estructura_de_programa) (como la palabra `while`
 que ya viste en esta introducción), [funciones](funciones) (escribir tus propios
-bloques de construcción), y [estructuras de datos](datos). Después de estos, seras
+bloques de construcción), y [estructuras de datos](datos). Después de estos, serás
 capaz de escribir programas simples. Luego, los Capítulos [5](orden_superior) y
 [6](objeto) introducen técnicas para usar funciones y objetos y asi escribir
 código más _abstracto_ y de manera que puedas mantener la complejidad bajo control.
@@ -514,7 +514,7 @@ function factorial(numero) {
 {{index "console.log"}}
 
 Algunas veces, para mostrar el resultado que produce un programa,
-la salida esperada se escribe después de el, con dos diagonales y una flecha en
+la salida esperada se escribe después de él, con dos diagonales y una flecha en
 frente.
 
 ```

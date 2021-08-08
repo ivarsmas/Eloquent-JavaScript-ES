@@ -78,8 +78,8 @@ En algunos casos, JavaScript te permite omitir el punto y coma al final
 de una declaración. En otros casos, tiene que estar allí, o la próxima
 ((línea)) serán tratada como parte de la misma declaración. Las reglas para
 saber cuando se puede omitir con seguridad son algo complejas y propensas a
-errores. Asi que en este libro, cada declaración que necesite un punto y coma
-siempre tendra uno. Te recomiendo que hagas lo mismo, al menos hasta que hayas
+errores. Así que en este libro, cada declaración que necesite un punto y coma
+siempre tendrá uno. Te recomiendo que hagas lo mismo, al menos hasta que hayas
 aprendido más sobre las sutilezas de los puntos y comas que puedan ser
 omitidos.
 
@@ -88,7 +88,7 @@ omitidos.
 {{indexsee variable, binding}}
 {{index syntax, [binding, definition], "side effect", memory}}
 
-Cómo mantiene un programa un ((estado)) interno? Cómo recuerda
+¿Cómo mantiene un programa un ((estado)) interno? ¿Cómo recuerda
 cosas? Hasta ahora hemos visto cómo producir nuevos valores a partir de
 valores anteriores, pero esto no cambia los valores anteriores, y el nuevo valor
 tiene que ser usado inmediatamente o se disipará nuevamente. Para atrapar y
@@ -233,7 +233,7 @@ palabra reservada.
 {{index "standard environment"}}
 
 La colección de vinculaciones y sus valores que existen en un momento dado
-se llama _((entorno))_. Cuando se inicia un programa, est
+se llama _((entorno))_. Cuando se inicia un programa, este 
 entorno no está vacío. Siempre contiene vinculaciones que son parte del
 ((estándar)) del lenguaje, y la mayoría de las veces, también tiene vinculaciones
 que proporcionan formas de interactuar con el sistema circundante. Por
@@ -251,7 +251,7 @@ Muchos de los valores proporcionados por el entorno predeterminado tienen el
 tipo _((función))_. Una función es una pieza de programa envuelta en un valor.
 Dichos valores pueden ser _aplicados_ para ejecutar el programa envuelto. Por
 ejemplo, en un entorno ((navegador)), la vinculación `prompt` sostiene una
-función que muestra un pequeño ((cuadro de diálogo)) preguntando por entrada
+función que muestra un pequeño ((cuadro de diálogo)) preguntando por la entrada
 del usuario. Esta se usa así:
 
 ```
@@ -262,9 +262,9 @@ prompt("Introducir contraseña");
 
 {{index parameter, [function, application]}}
 
-Ejecutar una función tambien se conoce como _invocarla_, _llamarla_, o
+Ejecutar una función también se conoce como _invocarla_, _llamarla_, o
 _aplicarla_. Puedes llamar a una función poniendo ((paréntesis)) después de una
-expresión que produzca un valor de función. Usualmente usarás directamente
+expresión que produzca un valor de función. De normal usarás directamente
 el nombre de la vinculación que contenga la función. Los valores entre
 los paréntesis se dan al programa dentro de la función. En el
 ejemplo, la función `prompt` usa el string que le damos como el
@@ -281,7 +281,7 @@ diálogo resultante, pero puede ser útil en programas de juguete y experimentos
 {{index "JavaScript console", "developer tools", "Node.js", "console.log", output}}
 
 En los ejemplos, utilicé `console.log` para dar salida a los valores.
-La mayoría de los sistemas de JavaScript (incluidos todos los ((navegadore))s
+La mayoría de los sistemas de JavaScript (incluídos todos los ((navegadore))s
 web modernos y Node.js) proporcionan una función `console.log` que escribe
 sus argumentos en _algun_ dispositivo de salida de texto. En los navegadores,
 esta salida aterriza en la ((consola de JavaScript)). Esta parte de la interfaz
@@ -307,7 +307,7 @@ if}}
 {{index object}}
 
 Aunque los nombres de las vinculaciones no puedan contener
-((carácteres de punto))s, `console.log` tiene uno. Esto es porque `console.log`
+((caracteres de punto))s, `console.log` tiene uno. Esto es porque `console.log`
 no es un vinculación simple. En realidad, es una expresión que obtiene la
 ((propiedad)) `log` del valor mantenido por la vinculación `console`.
 Averiguaremos qué significa esto exactamente en el
@@ -366,7 +366,7 @@ console.log("Tu número es la raiz cuadrada de " +
 
 La función `Número` convierte un valor a un número. Necesitamos esa
 conversión porque el resultado de `prompt` es un valor de string, y nosotros
-queremos un numero. Hay funciones similares llamadas `String` y
+queremos un número. Hay funciones similares llamadas `String` y
 `Boolean` que convierten valores a esos tipos.
 
 Aquí está la representación esquemática (bastante trivial) de un flujo de
@@ -380,7 +380,7 @@ control en línea recta:
 
 No todos los programas son caminos rectos. Podemos, por ejemplo, querer
 crear un camino de ramificación, donde el programa toma la rama adecuada
-basadandose en la situación en cuestión. Esto se llama _((ejecución
+basádandose en la situación en cuestión. Esto se llama _((ejecución
 condicional))_.
 
 {{figure {url: "img/controlflow-if.svg", alt: "Conditional control flow",width: "4cm"}}}
@@ -393,9 +393,9 @@ una cierta condición se cumple. Podríamos, por ejemplo, solo querer mostrar el
 cuadrado de la entrada si la entrada es realmente un número.
 
 ```{test: wrap}
-let elNumero = Number(prompt("Elige un numero"));
+let elNumero = Number(prompt("Elige un número"));
 if (!Number.isNaN(elNumero)) {
-  console.log("Tu número es la raiz cuadrada de " +
+  console.log("Tu número es la raíz cuadrada de " +
               elNumero * elNumero);
 }
 ```
@@ -425,8 +425,8 @@ también haberlas omitido en este caso, ya que solo tienes una sola
 declaración, pero para evitar tener que pensar si se necesitan
 o no, la mayoría de los programadores en JavaScript las usan en cada una
 de sus declaraciones envueltas como esta. Seguiremos esta convención
-en la mayoria de este libro, a excepción de la ocasional declaración
-de una sola linea.
+en la mayoría de este libro, a excepción de la ocasional declaración
+de una sola línea.
 
 ```
 if (1 + 1 == 2) console.log("Es verdad");
@@ -442,12 +442,12 @@ se puede usar, junto con `if`, para crear dos caminos de ejecución
 alternativos, de una manera separada.
 
 ```{test: wrap}
-let elNumero = Number(prompt("Elige un numero"));
+let elNumero = Number(prompt("Elige un número"));
 if (!Number.isNaN(elNumero)) {
-  console.log("Tu número es la raiz cuadrada de " +
+  console.log("Tu número es la raíz cuadrada de " +
               elNumero * elNumero);
 } else {
-  console.log("Ey. Por qué no me diste un número?");
+  console.log("Ey ¿Por qué no me diste un número?");
 }
 ```
 
@@ -457,7 +457,7 @@ Si tenemos más de dos rutas a elegir, múltiples pares de `if`/`else`
 se pueden "encadenar". Aquí hay un ejemplo:
 
 ```
-let numero = Number(prompt("Elige un numero"));
+let numero = Number(prompt("Elige un número"));
 
 if (numero < 10) {
   console.log("Pequeño");
@@ -574,7 +574,7 @@ del ciclo:
 ```
 let tuNombre;
 do {
-  tuNombre = prompt("Quien eres?");
+  tuNombre = prompt("¿Quién eres?");
 } while (!tuNombre);
 console.log(tuNombre);
 ```
@@ -595,7 +595,7 @@ En los ejemplos, he estado agregando espacios adelante de declaraciones que
 son parte de una declaración más grande. Estos no son necesarios—la computadora
 aceptará el programa normalmente sin ellos. De hecho, incluso las nuevas
 ((líneas)) en los programas son opcionales. Podrías escribir un
-programa en una sola línea inmensa si asi quisieras.
+programa en una sola línea inmensa si así quisieras.
 
 El rol de esta ((indentación)) dentro de los ((bloques)) es hacer que
 la estructura del código se destaque. En código donde se abren nuevos bloques
@@ -604,14 +604,14 @@ y donde comienza el otro. Con la indentación apropiada, la forma visual de un
 programa corresponde a la forma de los bloques dentro de él. Me gusta
 usar dos espacios para cada bloque abierto, pero los gustos varían—algunas
 personas usan cuatro espacios, y algunas personas usan
-((carácteres de tabulación)). Lo cosa importante es que cada bloque
+((caracteres de tabulación)). Lo cosa importante es que cada bloque
 nuevo agregue la misma cantidad de espacio.
 
 ```
 if (false != true) {
   console.log("Esto tiene sentido.");
   if (1 < 2) {
-    console.log("Ninguna sorpresa alli.");
+    console.log("Ninguna sorpresa allí.");
   }
 }
 ```
@@ -653,7 +653,7 @@ con el "estado" del ciclo estan agrupadas después del `for`.
 
 Los ((paréntesis)) después de una palabra clave `for` deben contener dos
 ((punto y coma))s. La parte antes del primer punto y coma _inicializa_ el
-cicloe, generalmente definiendo una ((vinculación)). La segunda parte es la
+ciclo, generalmente definiendo una ((vinculación)). La segunda parte es la
 ((expresión)) que _chequea_ si el ciclo debe continuar. La parte final
 _actualiza_ el estado del ciclo después de cada iteración. En la mayoría de
 los casos, esto es más corto y conciso que un constructo `while`.
@@ -779,21 +779,21 @@ else accionPorDefault();
 Existe un constructo llamado `switch` que está destinada a expresar tales
 "despachos" de una manera más directa. Desafortunadamente, la sintaxis que
 JavaScript usa para esto (que heredó de la línea lenguajes de programación
-C/Java) es algo incómoda—una cadena de declaraciones `if` podria llegar a verse
+C/Java) es algo incómoda—una cadena de declaraciones `if` podría llegar a verse
 mejor. Aquí hay un ejemplo:
 
 ```
-switch (prompt("Como esta el clima?")) {
+switch (prompt("¿Cómo está el clima?")) {
   case "lluvioso":
     console.log("Recuerda salir con un paraguas.");
     break;
   case "soleado":
-    console.log("Vistete con poca ropa.");
+    console.log("Vístete con poca ropa.");
   case "nublado":
     console.log("Ve afuera.");
     break;
   default:
-    console.log("Tipo de clima desconocido!");
+    console.log("¡Tipo de clima desconocido!");
     break;
 }
 ```
@@ -905,7 +905,7 @@ flujo de control usando declaraciones condicionales (`if`, `else`, y `switch`)
 y ciclos (`while`, `do`, y `for`).
 
 Las vinculaciones se pueden usar para archivar datos bajo un nombre, y son
-utiles para el seguimiento de estado en tu programa. El entorno es el conjunto
+útiles para el seguimiento de estado en tu programa. El entorno es el conjunto
 de vinculaciones que se definen. Los sistemas de JavaScript siempre
 incluyen por defecto un número de vinculaciones estándar útiles en tu entorno.
 
@@ -917,7 +917,7 @@ llamada a función es una expresión, y puede producir un valor.
 
 {{index exercises}}
 
-Si no estas seguro de cómo probar tus soluciones para los ejercicios, consulta
+Si no estás seguro de cómo probar tus soluciones para los ejercicios, consulta
 la [introducción](intro).
 
 Cada ejercicio comienza con una descripción del problema. Lee eso y trata de
@@ -927,7 +927,7 @@ resolver el ejercicio. Si tienes problemas, considera leer las pistas
 ejercicios no estan incluidas en este libro, pero puedes encontrarlas en línea
 en [_eloquentjavascript.net/code_](https://eloquentjavascript.net/code#2).
 Si quieres aprender algo de los ejercicios, te recomiendo mirar a las
-soluciones solo despues de que hayas resuelto el ejercicio, o al menos despues
+soluciones solo después de que hayas resuelto el ejercicio, o al menos después
 de que lo hayas intentando resolver por un largo tiempo y tengas un
 ligero dolor de cabeza.
 
@@ -935,7 +935,7 @@ ligero dolor de cabeza.
 
 {{index "triangle (exercise)"}}
 
-Escriba un ((ciclo)) que haga siete llamadas a `console.log` para generar el
+Escribe un ((ciclo)) que haga siete llamadas a `console.log` para generar el
 siguiente triángulo:
 
 ```{lang: null}
@@ -966,7 +966,7 @@ modificar para resolver el ejercicio. Recuerda que puedes hacer clic en los
 bloques de código para editarlos.
 
 ```
-// Tu código aqui.
+// Tu código aquí.
 ```
 if}}
 
